@@ -10,9 +10,11 @@ namespace SnackLadderGame
 
                 Console.WriteLine("Welcome to snake and ladder problem");
                 SnakeAndLadder srating_Point = new SnakeAndLadder();
-                srating_Point.StartPlay();
+                int StartPoint = srating_Point.StartPlay();
                 RollingDie rollingDie = new RollingDie();
-                rollingDie.NumGenerator();
+                int DiceNum=rollingDie.NumGenerator();
+                CheckForOptioncs checkForOptioncs = new CheckForOptioncs();
+                checkForOptioncs.CheckingOption(DiceNum,StartPoint);
             }
 
     }

@@ -6,11 +6,12 @@ namespace SnackLadderGame
 {
     internal class RollingDie
     {
-        public void NumGenerator()
+        public int NumGenerator()
         {
             Random LudoNum = new Random();  
             int Num = LudoNum.Next(1,6);
-            Console.WriteLine("You got the number: " +Num);
+            Console.WriteLine("You got Die number: " +Num);
+            return Num;
         }
     }
 }

@@ -8,10 +8,11 @@ namespace SnackLadderGame
     internal class SnakeAndLadder
     {
         public int StartingPoint = 0;
-        public void StartPlay()
+        public int StartPlay()
         {
 
             Console.WriteLine("Starting Position: " + StartingPoint);
+            return StartingPoint;
         }
     }
 
