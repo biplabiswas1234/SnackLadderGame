@@ -7,17 +7,19 @@ namespace SnackLadderGame
     internal class PlayerPositionTill_100
     {
 
-        public void Position100(ref int DiceNum, ref int Position)
+        public void Position100(ref int DiceUsed, ref int Position)
         {
+            //int a = 1;
             while (Position < 100)
-            { 
-                Random Check = new Random();
+            {
+                //a++;
+                Random Play = new Random(); 
                 int Temp = 1;
-                Random Play = new Random();
                 int GenNumber = Play.Next(1, 7);
+                DiceUsed++;
                 Console.WriteLine("\nGenerated number: " + GenNumber);
-                DiceNum = GenNumber;
-                int CheckNum = Check.Next(0, 3);
+                int Temporary= GenNumber;
+                int CheckNum = Play.Next(0, 3);
                 Console.WriteLine("\nYou got Checking option number: " + CheckNum);
             
             switch (CheckNum)
@@ -56,8 +58,12 @@ namespace SnackLadderGame
             break;
             }
             if (Position == 100)
+                    
             {
+                //Console.WriteLine("a is used {0} times:", a);
+                Console.WriteLine("Die is used {0} times:", DiceUsed);
                 Console.WriteLine("Congratulation! You WON");
+
             }
             else if (Position < 100)
             {
@@ -66,6 +72,7 @@ namespace SnackLadderGame
                     //a++;
                     Random Play1 = new Random();
                     int Dice_Num = Play1.Next(1,7);
+                    DiceUsed++;
                     Position = Position + Dice_Num;
                     if (Position > 100)
                     {
@@ -73,6 +80,10 @@ namespace SnackLadderGame
                     }
                     Console.WriteLine("\nGenerated number: " + Dice_Num);
                     Console.WriteLine("Position of the Ludo guti:" + Position);
+                    Console.WriteLine("Die is used {0} times:", DiceUsed);
+                    //Console.WriteLine("a is used {0} times:", a);
+
+
                     if (Position == 100)
                     {
                         Console.WriteLine("Congratulation! You WON");

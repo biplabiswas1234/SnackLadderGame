@@ -6,14 +6,15 @@ namespace SnackLadderGame
 {
     internal class CheckForOptioncs
     {
-        public void CheckingOption(ref int DiceNum,ref int Position)
+        public void CheckingOption(ref int DiceUsed, ref int Position)
         {
             Random Check = new Random();
             int CheckNum = Check.Next(0, 3);
             Console.WriteLine("\nYou got Checking option number: " + CheckNum);
             Random Play = new Random();
             int GenNumber=Play.Next(1,7);
-            DiceNum = GenNumber;
+            DiceUsed++;
+            int Temp = GenNumber;
             Console.WriteLine("\nGenerated number: " + GenNumber);
 
             switch (CheckNum)

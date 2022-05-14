@@ -13,16 +13,16 @@ namespace SnackLadderGame
             int Position = srating_Point.StartPlay();
             RollingDie rollingDie = new RollingDie();
             int DiceNum = rollingDie.NumGenerator();
-            //Console.WriteLine("DiceNum={0}, Position={1}", DiceNum, +Position);
-            CheckForOptioncs checkForOptioncs = new CheckForOptioncs();
-            checkForOptioncs.CheckingOption(ref DiceNum, ref Position);
-            //Console.WriteLine("DiceNum={0}, Position={1}", DiceNum, +Position);
-            PlayerPositionTill_100 position100 = new PlayerPositionTill_100();
-            position100.Position100(ref DiceNum, ref Position);
-            //Console.WriteLine("DiceNum={0}, Position={1}", DiceNum, +Position);
+            int DiceUsed = 1;
 
+            CheckForOptioncs checkForOptioncs = new CheckForOptioncs();
+            checkForOptioncs.CheckingOption(ref DiceUsed, ref Position);
+            Console.WriteLine("DIE is used {0} times:", DiceUsed);
+            PlayerPositionTill_100 position100 = new PlayerPositionTill_100();
+            Console.WriteLine("DIE is used {0} times:", DiceUsed);
+            position100.Position100(ref DiceUsed, ref Position);
         }
-        
+
 
     }
 }
