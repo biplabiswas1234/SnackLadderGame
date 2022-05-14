@@ -28,13 +28,18 @@ namespace SnackLadderGame
                         break;
                 case 1:
                     Position += GenNumber;
-                    Console.WriteLine("Going ahead by Ladder:" + Position);
                         if (Position > 100)
                         {
                             Position -= GenNumber;
                             Temp = 0;
+                            Console.WriteLine("Going ahead by Ladder:" + Position);
+
                         }
-                    break;
+                        else
+                        {
+                            Console.WriteLine("Going ahead by Ladder:" + Position);
+                        }
+                        break;
                 default:
                     Position -= GenNumber;
                         if (Position < 0)
@@ -43,13 +48,37 @@ namespace SnackLadderGame
                         }
                         Console.WriteLine("Snake bites and your position:" + Position);
                     break;
-
                 
+
+
             }
             if(Temp == 0)
             break;
             }
-
+            if (Position == 100)
+            {
+                Console.WriteLine("Congratulation! You WON");
+            }
+            else if (Position < 100)
+            {
+                while (Position != 100)
+                {
+                    //a++;
+                    Random Play1 = new Random();
+                    int Dice_Num = Play1.Next(1,7);
+                    Position = Position + Dice_Num;
+                    if (Position > 100)
+                    {
+                        Position = Position - Dice_Num;
+                    }
+                    Console.WriteLine("\nGenerated number: " + Dice_Num);
+                    Console.WriteLine("Position of the Ludo guti:" + Position);
+                    if (Position == 100)
+                    {
+                        Console.WriteLine("Congratulation! You WON");
+                    }
+                }
+            }
         }
     }
 }
