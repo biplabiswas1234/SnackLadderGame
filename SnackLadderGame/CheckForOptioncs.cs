@@ -6,25 +6,36 @@ namespace SnackLadderGame
 {
     internal class CheckForOptioncs
     {
-        public void CheckingOption(int DiceNum,int StartPoint)
+        public void CheckingOption(ref int DiceNum,ref int Position)
         {
             Random Check = new Random();
-            int CheckNum = Check.Next(1, 3);
-            Console.WriteLine("You got Checking option number: " + CheckNum);
+            int CheckNum = Check.Next(0, 3);
+            Console.WriteLine("\nYou got Checking option number: " + CheckNum);
+            Random Play = new Random();
+            int GenNumber=Play.Next(1,7);
+            DiceNum = GenNumber;
+            Console.WriteLine("\nGenerated number: " + GenNumber);
+
             switch (CheckNum)
             {
-                case 1:
+                case 0:
                     Console.WriteLine("No Play");
+                    Console.WriteLine("Your position is still in: " + Position);
                     break;
-                case 2:
-                    StartPoint += DiceNum;
-                    Console.WriteLine("Going ahead by Ladder:" + StartPoint);
+                case 1:
+
+                    Position += GenNumber;
+                    Console.WriteLine("Going ahead by Ladder:" + Position);
                     break;
                 default:
-                    StartPoint -= DiceNum;
-                    Console.WriteLine("Snake bites:" + StartPoint);
+                    Position -= GenNumber;
+                    if (Position < 0)
+                    { Position = 0;
+                    }
+                    Console.WriteLine("Snake bites:" + Position);
                     break;
             }
+            
         }
     }
 }

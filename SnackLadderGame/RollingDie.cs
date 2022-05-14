@@ -9,8 +9,8 @@ namespace SnackLadderGame
         public int NumGenerator()
         {
             Random LudoNum = new Random();  
-            int Num = LudoNum.Next(1,6);
-            Console.WriteLine("You got Die number: " +Num);
+            int Num = LudoNum.Next(1,7);
+            Console.WriteLine("\nYou got Die number: " +Num);
             return Num;
         }
     }
